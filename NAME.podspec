@@ -28,9 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/${USER_NAME}/${POD_NAME}.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
-
-  s.source_files = '${POD_NAME}/Classes/**/*'
+  s.ios.deployment_target = '13.0'
   
   # s.resource_bundles = {
   #   '${POD_NAME}' => ['${POD_NAME}/Assets/*.png']
@@ -39,4 +37,18 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+
+  s.default_subspec = 'Core'
+  
+  s.subspec 'Core' do |spec|
+      spec.frameworks = 'UIKit', 'Foundation'
+      spec.source_files = '${POD_NAME}/Classes/**/*.swift'
+
+      #spec.public_header_files = 'Classes/*.h'
+
+      # spec.dependency 'RxSwift', '6.5.0'
+      # spec.dependency 'RxCocoa', '6.5.0'
+      # spec.dependency 'Then', '~> 3.0.0'
+
+  end
 end
